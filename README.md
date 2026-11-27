@@ -1,6 +1,6 @@
 # Predicción de abandono de clientes (Customer Churn) con SQL y Machine Learning
 
-## 1. Project Overview
+## 1. Descripción del proyecto
 
 El abandono de clientes (*Customer Churn*) es un problema relevante para las empresas que ofrecen servicios mediante suscripciones, ya que la pérdida de clientes puede afectar directamente sus ingresos y su crecimiento.
 
@@ -10,7 +10,7 @@ Para ello, se construyó una base de datos relacional en MySQL, se realizaron co
 
 El proyecto contempla un enfoque integral de análisis de datos, desde la extracción y exploración de información hasta la construcción y evaluación de modelos de clasificación.
 
-## 2. Objectives
+## 2. Objetivos
 
 **Objetivo general**
 
@@ -26,7 +26,7 @@ Desarrollar un modelo de Machine Learning que permita predecir el abandono de cl
 - Evaluar el rendimiento de los modelos mediante métricas de clasificación y matrices de confusión.
 - Identificar las variables que presentan mayor relevancia en las predicciones.
 
-## 3. Technologies
+## 3. Tecnologías
 
 Las principales herramientas y tecnologías utilizadas en el desarrollo del proyecto fueron:
 
@@ -112,8 +112,11 @@ Las 13 variables utilizadas se organizaron en dos grupos:
 | Abandonaron (`1`) | 366 | 9,27 % |
 | **Total** | **3.947** | **100 %** |
 
+
+![Distribución de churn](images/churn_distribution.png)
+
 Esta distribución evidencia un desbalance entre las clases, ya que la cantidad de clientes que permanecieron en el servicio es considerablemente superior a la cantidad de clientes que lo abandonaron. Esta característica fue tenida en cuenta durante el entrenamiento y la evaluación de los modelos.
-## 5. SQL Analysis
+## 5. Analísis SQL 
 
 Una vez construida la base de datos, se realizaron consultas SQL para explorar el comportamiento de los clientes e identificar posibles patrones relacionados con el abandono del servicio.
 
@@ -236,7 +239,7 @@ Se utilizó un modelo basado en un conjunto de árboles de decisión, configurad
 
 Ambos modelos se entrenaron utilizando los mismos conjuntos de entrenamiento y prueba, permitiendo comparar sus resultados bajo las mismas condiciones.
 
-## 7. Model Evaluation
+## 7. Evaluación de Modelos
 
 Para evaluar el rendimiento de los modelos se utilizaron las siguientes métricas:
 
@@ -255,6 +258,8 @@ Los resultados obtenidos sobre el conjunto de prueba fueron los siguientes:
 | Precision | 0,2535 | 0,3220 |
 | Recall | 0,7397 | 0,2603 |
 | F1-score | 0,3776 | 0,2879 |
+
+![Comparación de modelos](images/model_comparison.png)
 
 ### Matrices de confusión
 
@@ -300,7 +305,7 @@ El umbral de 0,5 obtuvo el mayor F1-score entre los valores explorados, mientras
 
 Este análisis es exploratorio: los umbrales se evaluaron sobre el conjunto de prueba. Para una selección definitiva, sería conveniente utilizar un conjunto de validación independiente o validación cruzada y reservar el conjunto de prueba para la evaluación final.
 
-## 8. Feature Importance
+## 8. Importancias de las variables
 
 Con el objetivo de comprender qué variables tuvieron mayor relevancia en las predicciones, se analizaron los coeficientes de la Regresión Logística y las importancias de variables de Random Forest.
 
@@ -342,6 +347,8 @@ Las cinco variables con mayor importancia fueron:
 
 Estas cinco variables concentran aproximadamente el 59,13 % de la importancia total del modelo.
 
+![Importancia de variables](images/feature_importance.png)
+
 ### Interpretación
 
 Ambos modelos destacaron la relevancia de variables relacionadas con la utilización del servicio, el gasto acumulado y la antigüedad de los clientes.
@@ -352,7 +359,7 @@ Es importante aclarar que la importancia de variables de Random Forest represent
 
 Asimismo, las correlaciones elevadas entre algunas variables pueden afectar la distribución de la importancia entre ellas.
 
-## 9. Conclusions
+## 9. Conclusiones
 
 El desarrollo de este proyecto permitió recorrer distintas etapas de un proceso de análisis de datos, desde la construcción y consulta de una base de datos relacional hasta el entrenamiento y evaluación de modelos de Machine Learning.
 
